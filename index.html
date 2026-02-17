@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta name="description"
+        content="AgroTech - O'zbekistonda qishloq xo'jaligini raqamlashtirish bo'yicha yetakchi startup. AI va IoT yordamida hosildorlikni oshiring.">
+    <meta name="keywords" content="AgroTech, Uzbekistan, Startup, AI, IoT, Smart Farming, Qishloq xo'jaligi">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroTech - Startup for Investors</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .tg-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: #229ED9;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .tg-float:hover {
+            transform: scale(1.1);
+            background-color: #1c83b6;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans text-gray-800 overflow-x-hidden">
+
+    <nav class="flex items-center justify-between px-10 py-5 glass-nav shadow-sm sticky top-0 z-50">
+        <div class="text-2xl font-bold text-green-700">AGRO<span class="text-blue-500">TECH</span></div>
+        <div class="space-x-8 hidden md:flex font-medium">
+            <a href="./technologies.html" class="hover:text-green-600 transition">Texnologiyalar</a>
+            <a href="#data" class="hover:text-green-600 transition">Tahlil</a>
+            <a href="./investorlar.html" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">Investor
+                Deklaratsiyasi</a>
+        </div>
+    </nav>
+
+    <section class="hero-bg h-[90vh] flex items-center justify-center text-center text-white px-4">
+        <div data-aos="zoom-out" data-aos-duration="1500">
+            <h1 class="text-5xl md:text-8xl font-black mb-6 leading-tight">Qishloq Xo'jaligi <br> <span
+                    class="text-green-400">Digital</span> bo'lmoqda</h1>
+            <p class="text-lg md:text-2xl mb-10 max-w-3xl mx-auto font-light">Biz agrosanoatni AI va IoT yordamida
+                optimallashtiramiz. 30% kamroq xarajat, 20% ko'proq hosil.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <button
+                    class="bg-green-600 hover:bg-green-700 text-white px-10 py-4 rounded-full font-bold transition-all transform hover:scale-105">Demo
+                    Ko'rish</button>
+                <button
+                    class="border-2 border-white hover:bg-white hover:text-black text-white px-10 py-4 rounded-full font-bold transition-all">Bizning
+                    Pitch</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section id="tech" class="py-24 bg-white">
+        <div class="container mx-auto px-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-4 italic">AgroTech <span class="text-green-600">Ekotizimi</span></h2>
+                <p class="text-gray-500 max-w-3xl mx-auto text-lg">Bizning arsenalimizdagi 8 ta asosiy texnologiya — an'anaviy dehqonchilikni yuqori daromadli biznesga aylantiradi.</p>
+            </div>
+    
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div class="group bg-gray-50 rounded-2xl overflow-hidden shadow hover:shadow-xl transition-all border border-gray-100 hover:border-green-500" data-aos="zoom-in">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1594145070104-64506941162d?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Avtonom Traktor</h3>
+                        <p class="text-gray-600 text-sm">GPS va AI yordamida kechayu-kunduz haydovchisiz ishlash tizimi.</p>
+                    </div>
+                </div>
+    
+                <div class="group bg-gray-50 rounded-2xl overflow-hidden shadow hover:shadow-xl transition-all border border-gray-100 hover:border-green-500" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Pulsar Dron</h3>
+                        <p class="text-gray-600 text-sm">Dori sepish va ekinlar holatini multispektral tahlil qilish.</p>
+                    </div>
+                </div>
+    
+                <div class="group bg-gray-50 rounded-2xl overflow-hidden shadow hover:shadow-xl transition-all border border-gray-100 hover:border-green-500" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1589923158776-cb4485d99fd6?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">IoT Soil Sensor</h3>
+                        <p class="text-gray-600 text-sm">Namlik, sho'rlanish va NPK (o'g'it) tarkibini real-vaqtda o'lchash.</p>
+                    </div>
+                </div>
+    
+                <div class="group bg-gray-50 rounded-2xl overflow-hidden shadow hover:shadow-xl transition-all border border-gray-100 hover:border-green-500" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1463123081488-789f998ac9c4?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Smart Valve</h3>
+                        <p class="text-gray-600 text-sm">Masofadan boshqariladigan avtomatik tejamkor sug'orish klapanlari.</p>
+                    </div>
+                </div>
+    
+                <div class="group bg-gray-50 rounded-2xl overflow-hidden shadow hover:shadow-xl transition-all border border-gray-100 hover:border-green-500" data-aos="zoom-in">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Sat-Analytica</h3>
+                        <p class="text-gray-600 text-sm">Kosmosdan ekinlar rivojlanishini (NDVI) nazorat qilish tizimi.</p>
+                    </div>
+                </div>
+    
+                <div class="group bg-gray-50 rounded-2xl overflow-hidden shadow hover:shadow-xl transition-all border border-gray-100 hover:border-green-500" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1530836361253-376662776c59?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Harvest Robot</h3>
+                        <p class="text-gray-600 text-sm">Meva va sabzavotlarni saralab teruvchi robotlashgan qo'llar.</p>
+                    </div>
+                </div>
+    
+                <div class="group bg-gray-50 rounded-2xl overflow-hidden shadow hover:shadow-xl transition-all border border-gray-100 hover:border-green-500" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Greenhouse AI</h3>
+                        <p class="text-gray-600 text-sm">Iqlim nazorati, CO2 darajasi va yoritishni avtomatik boshqarish.</p>
+                    </div>
+                </div>
+    
+                <div class="group bg-gray-50 rounded-2xl overflow-hidden shadow hover:shadow-xl transition-all border border-gray-100 hover:border-green-500" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Weather Station</h3>
+                        <p class="text-gray-600 text-sm">Lokal ob-havo bashorati va ayoz/bo'ron haqida erta ogohlantirish.</p>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section> -->
+
+    <section class="py-16 bg-white border-b">
+        <div class="container mx-auto px-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div data-aos="fade-up">
+                <h3 class="text-4xl font-bold text-green-600 counter" data-target="250">0</h3>
+                <p class="text-gray-500 font-medium">Ulangan Fermalar</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-4xl font-bold text-blue-500 counter" data-target="15">0</h3>
+                <p class="text-gray-500 font-medium">IoT Sensorlar (Ming)</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-4xl font-bold text-green-600 counter" data-target="36">2.5 milliard metr kub (36%)</h3>
+                <p class="text-gray-500 font-medium">Tejalgan Suv (%)</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="300">
+                <h3 class="text-4xl font-bold text-blue-500 counter" data-target="2.4">0</h3>
+                <p class="text-gray-500 font-medium">ROI Ko'rsatkichi (M$)</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="data" class="py-24 px-10 bg-gray-50">
+        <div class="container mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2" data-aos="fade-right">
+                <h2 class="text-4xl font-bold mb-6">Hosildorlik va Resurslar <br> <span class="text-green-600">Real-vaqt
+                        rejimida</span></h2>
+                <p class="text-gray-600 text-lg mb-8">Bizning algoritmlarimiz har bir gektar yerdan olinadigan foydani
+                    maksimal darajaga ko'taradi. Ma'lumotlarni shunchaki yig'maymiz, ularni biznesga aylantiramiz.</p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Sun'iy
+                        intellekt tahlili</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Bulutli
+                        boshqaruv tizimi</li>
+                </ul>
+            </div>
+            <div class="md:w-1/2 chart-container" data-aos="fade-left">
+                <canvas id="investorChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" class="py-20 bg-white">
+        <div class="container mx-auto px-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Nega aynan AgroTech?</h2>
+                <div class="w-24 h-1 bg-green-500 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-red-50 p-8 rounded-3xl border-l-8 border-red-500" data-aos="fade-right">
+                    <h4 class="text-2xl font-bold text-red-600 mb-4"><i class="fas fa-exclamation-triangle mr-2"></i>
+                        Muammo</h4>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start gap-2"><b>1.</b> An'anaviy usulda suvning 40% isrof bo'ladi.</li>
+                        <li class="flex items-start gap-2"><b>2.</b> Kasalliklar kech aniqlangani sabab hosil
+                            yo'qotiladi.</li>
+                        <li class="flex items-start gap-2"><b>3.</b> Resurslarni noto'g'ri taqsimlash xarajatni
+                            oshiradi.</li>
+                    </ul>
+                </div>
+                <div class="bg-green-50 p-8 rounded-3xl border-l-8 border-green-500" data-aos="fade-left">
+                    <h4 class="text-2xl font-bold text-green-600 mb-4"><i class="fas fa-check-circle mr-2"></i> Bizning
+                        Yechim</h4>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start gap-2"><b>1.</b> IoT datchiklar orqali aniq (precision) sug'orish.
+                        </li>
+                        <li class="flex items-start gap-2"><b>2.</b> AI yordamida kasalliklarni 95% aniqlikda bashorat
+                            qilish.</li>
+                        <li class="flex items-start gap-2"><b>3.</b> Avtomatlashtirilgan tahlil orqali xarajatlarni 30%
+                            tejash.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-4">O‘zbekiston Bozori Tahlili</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Bizning texnologiyalarimiz mamlakat iqtisodiyoti uchun
+                    strategik ahamiyatga ega.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="p-8 border rounded-3xl hover:border-green-500 transition-all group" data-aos="zoom-in">
+                    <div
+                        class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-all">
+                        <i class="fas fa-tint text-blue-600 group-hover:text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-5xl font-bold text-gray-900 mb-2 italic">36%</h3>
+                    <p class="text-gray-600 font-semibold">Suvning Isrof Bo‘lishi</p>
+                    <p class="text-sm text-gray-500 mt-4 italic">O‘zbekistonda sug‘orish tizimidagi yo‘qotishlar
+                        miqdori. AgroTech buni 15% gacha kamaytiradi.</p>
+                </div>
+
+                <div class="p-8 border rounded-3xl hover:border-green-500 transition-all group" data-aos="zoom-in"
+                    data-aos-delay="100">
+                    <div
+                        class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-green-500 transition-all">
+                        <i class="fas fa-chart-line text-green-600 group-hover:text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-5xl font-bold text-gray-900 mb-2 italic">25%</h3>
+                    <p class="text-gray-600 font-semibold">YIMdagi Ulushi</p>
+                    <p class="text-sm text-gray-500 mt-4 italic">Qishloq xo‘jaligining mamlakat YaIMdagi ulushi. Bu soha
+                        raqamlashsa, daromad keskin oshadi.</p>
+                </div>
+
+                <div class="p-8 border rounded-3xl hover:border-green-500 transition-all group" data-aos="zoom-in"
+                    data-aos-delay="200">
+                    <div
+                        class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-yellow-500 transition-all">
+                        <i class="fas fa-globe text-yellow-600 group-hover:text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-5xl font-bold text-gray-900 mb-2 italic">$2 mlrd+</h3>
+                    <p class="text-gray-600 font-semibold">Yillik Eksport</p>
+                    <p class="text-sm text-gray-500 mt-4 italic">Meva-sabzavot eksporti hajmi. Sifat AI nazoratida
+                        bo‘lsa, eksport narxi 2 barobar qimmatlashadi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-900 text-white overflow-hidden">
+        <div class="container mx-auto px-10">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <h2 class="text-4xl font-bold mb-6 italic text-green-400">Investitsiya <span class="text-white">Simulyatori</span></h2>
+                    <p class="text-slate-400 mb-8">AgroTech ekotizimiga kiritilgan sarmoya qishloq xo'jaligidagi resurslarni tejash va hosildorlikni oshirish orqali o'zini oqlaydi.</p>
+                    
+                    <div class="space-y-6 bg-white/5 p-8 rounded-3xl border border-white/10">
+                        <div>
+                            <label class="block text-sm font-medium mb-4 text-slate-300">Gektarlar soni: <span id="hectareVal" class="text-green-400 font-bold">50</span> ga</label>
+                            <input type="range" id="hectareSlider" min="10" max="500" value="50" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-green-500">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 pt-4">
+                            <div class="p-4 bg-white/5 rounded-2xl border border-white/10 text-center">
+                                <p class="text-xs text-slate-400 uppercase">Yillik suv tejamkorligi</p>
+                                <p id="waterSaved" class="text-2xl font-black text-blue-400">0 m³</p>
+                            </div>
+                            <div class="p-4 bg-white/5 rounded-2xl border border-white/10 text-center">
+                                <p class="text-xs text-slate-400 uppercase">Qo'shimcha daromad</p>
+                                <p id="extraProfit" class="text-2xl font-black text-green-400">$0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative" data-aos="fade-left">
+                    <div class="absolute -top-10 -left-10 w-40 h-40 bg-green-500/20 rounded-full blur-3xl"></div>
+                    <div class="bg-white/10 backdrop-blur-md p-10 rounded-3xl border border-white/20 shadow-2xl">
+                        <h3 class="text-xl font-bold mb-6">Nega Aloqaventures? [cite: 25]</h3>
+                        <ul class="space-y-4 text-slate-300">
+                            <li class="flex items-start gap-3"><i class="fas fa-rocket text-green-500 mt-1"></i> <span><b>Masshtablash:</b> Butun respublika bo'ylab joriy etish[cite: 26, 27].</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-university text-blue-400 mt-1"></i> <span><b>IT-Agro integratsiyasi:</b> Aloqabank mijozlariga raqamli xizmatlar[cite: 28].</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://t.me/agrohelpuz_bot" target="_blank" class="tg-float">
+        <i class="fab fa-telegram-plane"></i>
+    </a>
+
+    <section id="contact" class="py-24 bg-white">
+        <div class="container mx-auto px-10">
+            <div class="flex flex-col md:flex-row gap-16 items-center">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <h2 class="text-4xl font-bold mb-6">Kelajakni birga <span class="text-green-600">quramiz</span></h2>
+                    <p class="text-gray-600 mb-8 text-lg">Loyiha haqida batafsil ma'lumot olish yoki hamkorlik
+                        masalalarini muhokama qilish uchun ma'lumotlaringizni qoldiring.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Email</p>
+                                <p class="font-bold text-gray-800">invest@agrotech.uz</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Ofisimiz</p>
+                                <p class="font-bold text-gray-800">Toshkent sh., IT Park, 4-blok</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 bg-gray-50 p-8 rounded-3xl shadow-xl" data-aos="fade-left">
+                    <form action="#" id="contactForm" class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-1 text-gray-700">Ism-sharifingiz</label>
+                                <input type="text" placeholder="Ahmad Aliev"
+                                    class="w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-2 focus:ring-green-500 outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1 text-gray-700">Kompaniya</label>
+                                <input type="text" placeholder="VC Group"
+                                    class="w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-2 focus:ring-green-500 outline-none">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1 text-gray-700">Email manzilingiz</label>
+                            <input type="email" placeholder="investor@example.com"
+                                class="w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-2 focus:ring-green-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1 text-gray-700">Sizni nima qiziqtiradi?</label>
+                            <select
+                                class="w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-2 focus:ring-green-500 outline-none">
+                                <option>Investitsiya kiritish</option>
+                                <option>Pilot loyiha o'tkazish</option>
+                                <option>Texnologik hamkorlik</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1 text-gray-700">Xabar</label>
+                            <textarea rows="4" placeholder="Siz bilan uchrashuv belgilamoqchiman..."
+                                class="w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-2 focus:ring-green-500 outline-none"></textarea>
+                        </div>
+                        <button
+                            id="submitBtn"
+                            class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl transition shadow-lg shadow-green-200">
+                            So'rovni yuborish
+                        </button>
+                        <p id="responseMessage" class="hidden text-center text-green-600 font-bold mt-4 p-3 bg-green-100 rounded-xl">
+                            ✅ Submitted successfully! Tez orada siz bilan bog'lanamiz.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Submit section -->
+
+    <section id="faq" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-4 italic">Ko'p beriladigan <span class="text-green-600">savollar</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">AgroTech texnologiyalari, iqlim nazorati va hosildorlikni oshirish bo'yicha barcha savollarga javoblar.</p>
+            </div>
+    
+            <div class="max-w-4xl mx-auto space-y-4">
+                
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden" data-aos="fade-up">
+                    <button onclick="toggleFaq(1)" class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition">
+                        <span class="font-bold text-gray-800 flex items-center gap-3">
+                            <i class="fas fa-wifi text-green-600"></i> IoT datchiklar internet yo'q joyda qanday ishlaydi?
+                        </span>
+                        <i id="icon-1" class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-1" class="hidden p-6 pt-0 text-gray-600 border-t border-gray-50 bg-gray-50/30">
+                        Bizning datchiklarimiz <strong>LoRaWAN</strong> texnologiyasi asosida ishlaydi. Bu tizim internet bo'lmagan chekka dalalarda 15 km masofagacha ma'lumot uzata oladi. Ma'lumotlar markaziy stansiya orqali bulutli tizimga xavfsiz yuboriladi.
+                    </div>
+                </div>
+    
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="50">
+                    <button onclick="toggleFaq(2)" class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition">
+                        <span class="font-bold text-gray-800 flex items-center gap-3">
+                            <i class="fas fa-rocket text-green-600"></i> Texnologiya yordamida hosilni muddatidan oldin olish mumkinmi?
+                        </span>
+                        <i id="icon-2" class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-2" class="hidden p-6 pt-0 text-gray-600 border-t border-gray-50 bg-gray-50/30">
+                        Ha, mumkin. Aqlli datchiklar o‘simlik uchun ideal mikroklimatni (namlik, mineral va harorat) doimiy nazorat qiladi. O‘simlik barcha kerakli elementlarni o‘z vaqtida olsa, uning vegetatsiya davri 10-15% ga tezlashadi, bu esa hosilni bozorga boshqalardan oldin chiqarish imkonini beradi.
+                    </div>
+                </div>
+    
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <button onclick="toggleFaq(3)" class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition">
+                        <span class="font-bold text-gray-800 flex items-center gap-3">
+                            <i class="fas fa-cloud-sun-rain text-green-600"></i> Noqulay iqlim sababli ekin yetilishi kechiksa nima qilinadi?
+                        </span>
+                        <i id="icon-3" class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-3" class="hidden p-6 pt-0 text-gray-600 border-t border-gray-50 bg-gray-50/30">
+                        Agar kutilmagan sovuq yoki jazirama sababli ekin rivojlanishdan orqada qolsa, bizning AI tizimimiz buni darhol aniqlaydi va stressdan chiqarish uchun maxsus sug'orish va oziqlantirish rejasini tavsiya qiladi. Bu yo'qotilgan vaqtni qayta tiklashga yordam beradi.
+                    </div>
+                </div>
+    
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="150">
+                    <button onclick="toggleFaq(4)" class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition">
+                        <span class="font-bold text-gray-800 flex items-center gap-3">
+                            <i class="fas fa-snowflake text-green-600"></i> Bahorgi ayozlardan qanday himoya qilasiz?
+                        </span>
+                        <i id="icon-4" class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-4" class="hidden p-6 pt-0 text-gray-600 border-t border-gray-50 bg-gray-50/30">
+                        Bizning meteostansiyalarimiz haroratning keskin tushishini 48 soat oldin bashorat qiladi va fermerning telefoniga ogohlantirish yuboradi. Shuningdek, tizim ayozga qarshi avtomatik purkash yoki namlik himoyasi rejimlarini tavsiya qilishi mumkin.
+                    </div>
+                </div>
+    
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <button onclick="toggleFaq(5)" class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition">
+                        <span class="font-bold text-gray-800 flex items-center gap-3">
+                            <i class="fas fa-tint text-green-600"></i> Sug'orish tizimi suvni necha foizga tejaydi?
+                        </span>
+                        <i id="icon-5" class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-5" class="hidden p-6 pt-0 text-gray-600 border-t border-gray-50 bg-gray-50/30">
+                        Bizning datchiklar tuproqning faqat ildiz qismidagi namlikni o'lchagani sababli, ortiqcha sug'orishning oldi olinadi. Natijada suv sarfi 35% dan 50% gacha kamayadi, bu esa xarajatlarni sezilarli darajada tejaydi.
+                    </div>
+                </div>
+    
+                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden" data-aos="fade-up" data-aos-delay="250">
+                    <button onclick="toggleFaq(6)" class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition">
+                        <span class="font-bold text-gray-800 flex items-center gap-3">
+                            <i class="fas fa-tools text-green-600"></i> Eski turdagi traktorlarga tizimni o'rnatsa bo'ladimi?
+                        </span>
+                        <i id="icon-6" class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-6" class="hidden p-6 pt-0 text-gray-600 border-t border-gray-50 bg-gray-50/30">
+                        Albatta. Bizning avtonom boshqaruv modullarimiz universal qilib ishlangan. Ular Case, New Holland, va hatto modernizatsiya qilingan mahalliy traktor modellariga ham mos keladi.
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-gray-900 text-gray-400 py-12 text-center">
+        <div class="mb-6 text-2xl font-bold text-white">AGROTECH</div>
+        <p>© 2026 AgroTech. Built by Aydos Reymov. All Rights Reserved.</p>
+    </footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // 1. Animatsiyalarni yoqish
+        AOS.init();
+
+        // 2. Raqamlarni hisoblash (Counter)
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const speed = 200;
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = (count + inc).toFixed(target < 10 ? 1 : 0);
+                    setTimeout(updateCount, 15);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        });
+
+        // 3. Investorlar uchun Grafika
+        const ctx = document.getElementById('investorChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['2023', '2024', '2025', '2026 (Plan)'],
+                datasets: [{
+                    label: 'Yillik Daromad ($)',
+                    data: [50000, 150000, 450000, 1200000],
+                    backgroundColor: ['#3b82f6', '#10b981', '#3b82f6', '#10b981'],
+                    borderRadius: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+
+        // 1. Silliq siljish (Smooth Scroll)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// 2. Texnologiyalar haqida ma'lumotlar bazasi
+const techData = {
+    "Avtonom Traktor": {
+        desc: "Ushbu traktor sun'iy intellekt va GPS yordamida kechayu-kunduz inson aralashuvisiz ishlaydi. U tuproqni haydashda eng samarali yo'nalishlarni o'zi hisoblab chiqadi.",
+        benefit: "Mehnat xarajatlarini 40% ga kamaytiradi va yoqilg'i sarfini 25% ga optimallashtiradi.",
+        img: "https://images.unsplash.com/photo-1594145070104-64506941162d?auto=format&fit=crop&w=800&q=80"
+    },
+    "Pulsar Dron": {
+        desc: "Dronlarimiz multispektral kameralar bilan jihozlangan bo'lib, ular ekinlarning fotosintez darajasini o'lchaydi va kasallangan hududlarni erta aniqlaydi.",
+        benefit: "Zararkunandalarga qarshi kurashish samaradorligini 90% ga oshiradi.",
+        img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=800&q=80"
+    },
+    // Boshqa uskunalar uchun ham shunday ma'lumot qo'shish mumkin...
+};
+
+// 3. Modalni ochish funksiyasi
+function openTechModal(title) {
+    const modal = document.getElementById('techModal');
+    const content = document.getElementById('modalContent');
+    const data = techData[title] || { 
+        desc: "Ushbu texnologiya haqida ma'lumot tez orada yangilanadi.", 
+        benefit: "Yuqori hosildorlik va resurslarni tejash.",
+        img: "https://images.unsplash.com/photo-1463123081488-789f998ac9c4?auto=format&fit=crop&w=800&q=80"
+    };
+
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalDesc').innerText = data.desc;
+    document.getElementById('modalBenefit').innerText = data.benefit;
+    document.getElementById('modalImg').src = data.img;
+
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+        content.classList.remove('scale-95', 'opacity-0');
+        content.classList.add('scale-100', 'opacity-100');
+    }, 10);
+}
+
+// 4. Modalni yopish
+function closeModal() {
+    const modal = document.getElementById('techModal');
+    const content = document.getElementById('modalContent');
+    
+    content.classList.add('scale-95', 'opacity-0');
+    setTimeout(() => {
+        modal.classList.add('hidden');
+    }, 300);
+}
+
+// Oynadan tashqarini bossa yopilish
+window.onclick = function(event) {
+    const modal = document.getElementById('techModal');
+    if (event.target == modal) closeModal();
+}
+        // To'g'rilangan Counter funksiyasi
+
+
+        const form = document.getElementById('contactForm');
+const responseMessage = document.getElementById('responseMessage');
+const submitBtn = document.getElementById('submitBtn');
+
+form.addEventListener('submit', async function(e) {
+    e.preventDefault(); // Sahifani yangilanishini to'xtatadi
+
+    const formData = new FormData(form);
+    submitBtn.innerText = "Yuborilmoqda...";
+    submitBtn.disabled = true;
+
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            // Muvaffaqiyatli bo'lsa
+            form.reset(); // Formani tozalash
+            submitBtn.classList.add('hidden'); // Tugmani yashirish
+            responseMessage.classList.remove('hidden'); // Xabarni ko'rsatish
+        } else {
+            alert("Xatolik yuz berdi. Iltimos qaytadan urinib ko'ring.");
+            submitBtn.disabled = false;
+            submitBtn.innerText = "So'rovni yuborish";
+        }
+    } catch (error) {
+        alert("Internet aloqasini tekshiring.");
+        submitBtn.disabled = false;
+    }
+});
+
+// Faq //
+
+function toggleFaq(id) {
+    const allContent = document.querySelectorAll('[id^="faq-"]');
+    const allIcons = document.querySelectorAll('[id^="icon-"]');
+    const currentContent = document.getElementById(`faq-${id}`);
+    const currentIcon = document.getElementById(`icon-${id}`);
+
+    // Boshqa barcha savollarni yopish
+    allContent.forEach(content => {
+        if (content.id !== `faq-${id}`) {
+            content.classList.add('hidden');
+        }
+    });
+    allIcons.forEach(icon => {
+        if (icon.id !== `icon-${id}`) {
+            icon.style.transform = 'rotate(0deg)';
+        }
+    });
+
+    // Tanlangan savolni ochish yoki yopish
+    if (currentContent.classList.contains('hidden')) {
+        currentContent.classList.remove('hidden');
+        currentIcon.style.transform = 'rotate(180deg)';
+    } else {
+        currentContent.classList.add('hidden');
+        currentIcon.style.transform = 'rotate(0deg)';
+    }
+}
+
+// 4. Investor Kalkulyatori Mantiqi
+const hectareSlider = document.getElementById('hectareSlider');
+const hectareVal = document.getElementById('hectareVal');
+const waterSaved = document.getElementById('waterSaved');
+const extraProfit = document.getElementById('extraProfit');
+
+function updateCalculator() {
+    const hectares = parseInt(hectareSlider.value);
+    hectareVal.innerText = hectares;
+
+    // Hisob-kitob ko'rsatkichlari (PDF ma'lumotlari asosida):
+    // 36% suv tejash  va hosilni 15-20 kunga tezlashtirish [cite: 10, 11]
+    const waterPerHectare = 5000; // m3 o'rtacha
+    const profitPerHectare = 1200; // $ o'rtacha qo'shimcha foyda
+
+    const totalWaterSaved = Math.round(hectares * waterPerHectare * 0.36);
+    const totalProfit = Math.round(hectares * profitPerHectare);
+
+    waterSaved.innerText = totalWaterSaved.toLocaleString() + " m³";
+    extraProfit.innerText = "$" + totalProfit.toLocaleString();
+}
+
+hectareSlider.addEventListener('input', updateCalculator);
+updateCalculator(); // Boshlang'ich hisob
+
+// 5. Scroll qilinganda raqamlarni qayta ishga tushirish (Intersection Observer)
+const observerOptions = { threshold: 0.5 };
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Counter funksiyasini qayta ishga tushirish mumkin
+            entry.target.classList.add('animate-stats');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.counter').forEach(el => statsObserver.observe(el));
+    </script>
+</body>
+
+</html>

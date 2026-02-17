@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texnologiyalar - AgroTech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .tech-card:hover img { transform: scale(1.1); }
+        .modal-active { overflow: hidden; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <nav class="p-6 bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-green-700 font-bold text-xl"><i class="fas fa-arrow-left mr-2"></i> AGROTECH</a>
+            <h1 class="text-gray-500 font-medium">Bizning Texnologiyalar</h1>
+        </div>
+    </nav>
+
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-down">
+                <h2 class="text-4xl font-bold text-gray-800">Uskunalar va <span class="text-green-600">Innovatsiyalar</span></h2>
+            </div>
+
+            <div id="techGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                </div>
+        </div>
+    </section>
+
+    <div id="techModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/70 backdrop-blur-md">
+        <div class="bg-white rounded-3xl max-w-2xl w-full shadow-2xl overflow-hidden" id="modalContent">
+            <div class="relative">
+                <img id="modalImg" src="" class="w-full h-72 object-cover">
+                <button onclick="closeModal()" class="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md transition">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-8">
+                <h2 id="modalTitle" class="text-3xl font-bold text-green-700 mb-4"></h2>
+                <p id="modalDesc" class="text-gray-600 mb-6 leading-relaxed"></p>
+                <div class="bg-green-50 p-4 rounded-xl border border-green-100 flex items-start gap-3">
+                    <i class="fas fa-lightbulb text-green-600 mt-1"></i>
+                    <div>
+                        <span class="font-bold text-green-800 block text-sm uppercase">Samaradorlik:</span>
+                        <p id="modalBenefit" class="text-green-700 font-medium"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        const technologies = [
+            { title: "Avtonom Traktor", img: "./tractor-image1.jpg", desc: "AI va GPS orqali kechayu-kunduz avtomatik boshqariladigan traktor tizimi.", benefit: "Yoqilg'i tejash: 25%, Mehnat sarfi: -40%" },
+            { title: "Pulsar Dron", img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=500&q=80", desc: "Ekinlarni dori sepish va multispektral tahlil qilish uchun mo'ljallangan uchuvchisiz qurilma.", benefit: "90% aniqlikdagi diagnostika." },
+            { title: "IoT Soil Sensor", img: "https://images.unsplash.com/photo-1589923158776-cb4485d99fd6?auto=format&fit=crop&w=500&q=80", desc: "Tuproq ostidagi namlik va minerallar darajasini masofadan nazorat qiluvchi datchik.", benefit: "O'g'it va suvni 35% gacha tejash." },
+            { title: "Smart Valve", img: "https://images.unsplash.com/photo-1463123081488-789f998ac9c4?auto=format&fit=crop&w=500&q=80", desc: "Avtomatik ochilib-yopiluvchi aqlli sug'orish klapanlari.", benefit: "Suv resurslarini 50% tejash." },
+            { title: "Sat-Monitoring", img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=500&q=80", desc: "Sun'iy yo'ldosh orqali katta maydonlarni doimiy kuzatish tizimi.", benefit: "Hosilni 20% ga oshirish imkoniyati." },
+            { title: "Harvest Robot", img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=500&q=80", desc: "Nozik mevalarni shikastlamasdan terib oluvchi robotlashgan qo'llar.", benefit: "Inson mehnati sarfini nolga tushiradi." },
+            { title: "Greenhouse AI", img: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=500&q=80", desc: "Issiqxonalardagi harorat va namlikni o'zi boshqaradigan aqlli kontroller.", benefit: "Iqlim nazoratida 100% barqarorlik." },
+            { title: "Weather Station", img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=500&q=80", desc: "Fermerlar uchun lokal ob-havo bashorati va ogohlantirish stansiyasi.", benefit: "Ayozdan ekinlarni asrash ogohlantiruvi." }
+        ];
+
+        const grid = document.getElementById('techGrid');
+
+        technologies.forEach((tech, index) => {
+            const card = `
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all cursor-pointer group" onclick="openModal(${index})" data-aos="fade-up" data-aos-delay="${index * 50}">
+                    <div class="h-48 overflow-hidden">
+                        <img src="${tech.img}" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-gray-800 mb-2">${tech.title}</h3>
+                        <p class="text-gray-500 text-sm line-clamp-2">${tech.desc}</p>
+                    </div>
+                </div>
+            `;
+            grid.innerHTML += card;
+        });
+
+        function openModal(index) {
+            const tech = technologies[index];
+            document.getElementById('modalTitle').innerText = tech.title;
+            document.getElementById('modalDesc').innerText = tech.desc;
+            document.getElementById('modalBenefit').innerText = tech.benefit;
+            document.getElementById('modalImg').src = tech.img;
+            
+            const modal = document.getElementById('techModal');
+            modal.classList.remove('hidden');
+            document.body.classList.add('modal-active');
+        }
+
+        function closeModal() {
+            document.getElementById('techModal').classList.add('hidden');
+            document.body.classList.remove('modal-active');
+        }
+    </script>
+</body>
+</html>

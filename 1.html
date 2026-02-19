@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroTech - Digital Agriculture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Mobil menyu uchun animatsiya */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans overflow-x-hidden">
+
+    <nav class="flex items-center justify-between px-6 md:px-16 py-4 bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-[100]">
+        <div class="text-2xl font-bold text-green-700 tracking-tighter">AGRO<span class="text-blue-500">UZ</span></div>
+        
+        <div class="hidden md:flex space-x-8 font-medium items-center">
+            <a href="#data" class="hover:text-green-600 transition">Bozor Tahlili</a>
+            <a href="https://t.me/SIZNING_BOTINGIZ" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition">Botni ochish</a>
+        </div>
+
+        <button id="menu-btn" class="md:hidden text-2xl text-gray-700 focus:outline-none">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-[101] p-6 md:hidden">
+        <button id="close-btn" class="text-2xl text-gray-700 mb-8">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="flex flex-col space-y-6 font-semibold">
+            <a href="#data" class="mobile-link text-lg border-b pb-2">Bozor Tahlili</a>
+            <a href="#" class="mobile-link text-lg border-b pb-2">Texnologiya</a>
+            <a href="https://t.me/SIZNING_BOTINGIZ" class="bg-blue-600 text-white text-center py-3 rounded-xl">Telegram Bot</a>
+        </div>
+    </div>
+
+    <section class="hero-bg h-[80vh] flex items-center justify-center text-center text-white px-6">
+        <div data-aos="fade-up">
+            <h1 class="text-4xl md:text-7xl font-black mb-4 uppercase">Raqamli <span class="text-green-400">Dalalar</span></h1>
+            <p class="text-lg md:text-xl mb-8 max-w-xl mx-auto opacity-90">O'zbekiston agrosanoati uchun eng samarali smart-yechimlar.</p>
+            <button class="bg-green-600 px-10 py-4 rounded-full font-bold hover:scale-105 transition">Demo boshlash</button>
+        </div>
+    </section>
+
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="text-center p-4 border rounded-2xl" data-aos="zoom-in">
+                <h3 class="text-3xl font-bold text-green-600">4.3M</h3>
+                <p class="text-xs text-gray-500 uppercase tracking-widest">Gektar yer</p>
+            </div>
+            <div class="text-center p-4 border rounded-2xl" data-aos="zoom-in" data-aos-delay="100">
+                <h3 class="text-3xl font-bold text-blue-500">35%</h3>
+                <p class="text-xs text-gray-500 uppercase tracking-widest">Suv tejash</p>
+            </div>
+            <div class="text-center p-4 border rounded-2xl" data-aos="zoom-in" data-aos-delay="200">
+                <h3 class="text-3xl font-bold text-orange-500">20%</h3>
+                <p class="text-xs text-gray-500 uppercase tracking-widest">Hosil o'sishi</p>
+            </div>
+            <div class="text-center p-4 border rounded-2xl" data-aos="zoom-in" data-aos-delay="300">
+                <h3 class="text-3xl font-bold text-purple-600">100%</h3>
+                <p class="text-xs text-gray-500 uppercase tracking-widest">Digital nazorat</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8 text-center text-sm opacity-80">
+        © 2026 AgroTech Uzbekistan.
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Hamburger Menyu Logikasi
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        menuBtn.onclick = () => mobileMenu.classList.add('active');
+        closeBtn.onclick = () => mobileMenu.classList.remove('active');
+        
+        // Link bosilganda menyu yopilsin
+        links.forEach(link => {
+            link.onclick = () => mobileMenu.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

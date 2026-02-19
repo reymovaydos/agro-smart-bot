@@ -51,8 +51,8 @@ async def tools_handler(message: types.Message):
 async def about(message: types.Message):
     text = (
         f"🏢 {hbold('AgroSmartCompany')}\n"
-        f"Barqaror smart dehqonchilikdagi texnologik yutuq[cite: 2].\n"
-        f"Sayt: www.agrohelp.uz [cite: 4]"
+        f"Barqaror smart dehqonchilikdagi texnologik yutuq.\n"
+        f"Sayt: www.agrohelp.uz"
     )
     await message.answer(text, parse_mode="HTML")
 
@@ -80,7 +80,7 @@ async def how_it_works(message: types.Message):
 @dp.message(F.text == "📊 Bozor imkoniyatlari")
 async def market(message: types.Message):
     text = (
-        f"📊 {hbold('Bozor hajmi')}[cite: 18]:\n\n"
+        f"📊 {hbold('Bozor hajmi')}:\n\n"
         f"• O'zbekiston QX sektori: {hbold('$20 mlrd+')}.\n"
         f"• Agrotech o'sishi: yiliga {hbold('15%')}.\n"
         f"• Maqsad: 500 ta klaster va 5000 ta fermer."
@@ -98,7 +98,7 @@ async def partner(message: types.Message):
 
 @dp.message(F.text == "📞 Bog'lanish")
 async def contact(message: types.Message):
-    await message.answer(f"Murojaat uchun: @reymovaydos \nSayt: www.agrohelp.uz \n Email: reymovaydos03@gmail.com")
+    await message.answer(f"Murojaat uchun: @reymovaydos \nSayt: https://agro-tech-three.vercel.app/ \n Email: reymovaydos03@gmail.com")
 
 async def main():
     await dp.start_polling(bot)

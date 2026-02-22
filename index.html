@@ -11,6 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .hero-bg {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -54,20 +55,54 @@
             transform: scale(1.1);
             background-color: #1c83b6;
         }
+
+        /* Menu style */
+        
+
+        .animate-fade-in {
+        animation: fadeIn 0.3s ease-in-out;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Grafik konteyneri uchun maxsus stil */
+    .chart-container {
+        position: relative;
+        margin: auto;
+        width: 100%;
+    }
     </style>
 </head>
 
 <body class="bg-gray-50 font-sans text-gray-800 overflow-x-hidden">
 
-    <nav class="flex items-center justify-between px-10 py-5 glass-nav shadow-sm sticky top-0 z-50">
+   <nav class="glass-nav shadow-sm sticky top-0 z-50 bg-white/90 backdrop-blur-md">
+    <div class="flex items-center justify-between px-6 md:px-10 py-5">
         <div class="text-2xl font-bold text-green-700">AGRO<span class="text-blue-500">TECH</span></div>
-        <div class="space-x-8 hidden md:flex font-medium">
+
+        <div class="hidden md:flex space-x-8 font-medium items-center">
             <a href="./technologies.html" class="hover:text-green-600 transition">Texnologiyalar</a>
             <a href="#data" class="hover:text-green-600 transition">Tahlil</a>
-            <a href="./investorlar.html" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">Investor
-                Deklaratsiyasi</a>
+            <a href="./investorlar.html" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">
+                Investor Deklaratsiyasi
+            </a>
         </div>
-    </nav>
+
+        <button onclick="toggleSimpleMenu()" class="md:hidden text-gray-700 focus:outline-none p-2 text-2xl">
+            <i class="fas fa-bars" id="menu-icon"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu-list" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg animate-fade-in">
+        <div class="flex flex-col p-4 space-y-4 font-semibold text-gray-700">
+            <a href="./technologies.html" class="hover:text-green-600 py-2 border-b border-gray-50">Texnologiyalar</a>
+            <a href="#data" onclick="toggleSimpleMenu()" class="hover:text-green-600 py-2 border-b border-gray-50">Tahlil</a>
+            <a href="./investorlar.html" class="text-blue-600 py-2">Investor Deklaratsiyasi</a>
+        </div>
+    </div>
+</nav>
 
     <section class="hero-bg h-[90vh] flex items-center justify-center text-center text-white px-4">
         <div data-aos="zoom-out" data-aos-duration="1500">
@@ -200,25 +235,39 @@
         </div>
     </section>
 
-    <section id="data" class="py-24 px-10 bg-gray-50">
-        <div class="container mx-auto flex flex-col md:flex-row items-center gap-16">
-            <div class="md:w-1/2" data-aos="fade-right">
-                <h2 class="text-4xl font-bold mb-6">Hosildorlik va Resurslar <br> <span class="text-green-600">Real-vaqt
-                        rejimida</span></h2>
-                <p class="text-gray-600 text-lg mb-8">Bizning algoritmlarimiz har bir gektar yerdan olinadigan foydani
-                    maksimal darajaga ko'taradi. Ma'lumotlarni shunchaki yig'maymiz, ularni biznesga aylantiramiz.</p>
-                <ul class="space-y-4">
-                    <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Sun'iy
-                        intellekt tahlili</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500"></i> Bulutli
-                        boshqaruv tizimi</li>
-                </ul>
-            </div>
-            <div class="md:w-1/2 chart-container" data-aos="fade-left">
+   <section id="data" class="py-12 md:py-24 px-6 md:px-10 bg-gray-50 overflow-hidden">
+    <div class="container mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
+        
+        <div class="w-full md:w-1/2 text-center md:text-left" data-aos="fade-right">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                Hosildorlik va Resurslar <br> 
+                <span class="text-green-600">Real-vaqt rejimida</span>
+            </h2>
+            <p class="text-gray-600 text-base md:text-lg mb-8 max-w-xl mx-auto md:mx-0">
+                Bizning algoritmlarimiz har bir gektar yerdan olinadigan foydani 
+                maksimal darajaga ko'taradi. Ma'lumotlarni shunchaki yig'maymiz, ularni biznesga aylantiramiz.
+            </p>
+            
+            <ul class="space-y-4 inline-block md:block text-left">
+                <li class="flex items-center gap-3">
+                    <i class="fas fa-check-circle text-green-500"></i> 
+                    <span class="font-medium text-gray-700">Sun'iy intellekt tahlili</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <i class="fas fa-check-circle text-green-500"></i> 
+                    <span class="font-medium text-gray-700">Bulutli boshqaruv tizimi</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="w-full md:w-1/2 chart-container relative" data-aos="fade-left">
+            <div class="relative h-[300px] md:h-[400px] w-full">
                 <canvas id="investorChart"></canvas>
             </div>
         </div>
-    </section>
+        
+    </div>
+</section>
 
     <section id="tech" class="py-20 bg-white">
         <div class="container mx-auto px-10">
@@ -375,7 +424,7 @@
                     </div>
                 </div>
 
-                <div class="md:w-1/2 bg-gray-50 p-8 rounded-3xl shadow-xl" data-aos="fade-left">
+                <!-- <div class="md:w-1/2 bg-gray-50 p-8 rounded-3xl shadow-xl" data-aos="fade-left">
                     <form action="#" id="contactForm" class="space-y-4">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
@@ -417,7 +466,55 @@
                             ✅ Submitted successfully! Tez orada siz bilan bog'lanamiz.
                         </p>
                     </form>
-                </div>
+                </div> -->
+                <div class="w-full md:w-1/2 bg-white p-6 md:p-8 rounded-3xl shadow-xl" data-aos="fade-left">
+    <form action="#" id="contactForm" class="space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <label class="block text-sm font-medium mb-1 text-gray-700">Ism-sharifingiz</label>
+                <input type="text" placeholder="Ahmad Aliev"
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-green-500 outline-none transition">
+            </div>
+            <div>
+                <label class="block text-sm font-medium mb-1 text-gray-700">Kompaniya</label>
+                <input type="text" placeholder="VC Group"
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-green-500 outline-none transition">
+            </div>
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium mb-1 text-gray-700">Email manzilingiz</label>
+            <input type="email" placeholder="investor@example.com"
+                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-green-500 outline-none transition">
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium mb-1 text-gray-700">Sizni nima qiziqtiradi?</label>
+            <select class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-green-500 outline-none bg-white transition appearance-none">
+                <option>Investitsiya kiritish</option>
+                <option>Pilot loyiha o'tkazish</option>
+                <option>Texnologik hamkorlik</option>
+            </select>
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium mb-1 text-gray-700">Xabar</label>
+            <textarea rows="4" placeholder="Siz bilan uchrashuv belgilamoqchiman..."
+                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-green-500 outline-none transition resize-none"></textarea>
+        </div>
+
+        <button
+            type="submit"
+            id="submitBtn"
+            class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl transition-all transform active:scale-95 shadow-lg shadow-green-200">
+            So'rovni yuborish
+        </button>
+
+        <p id="responseMessage" class="hidden text-center text-green-700 font-bold mt-4 p-4 bg-green-50 rounded-xl border border-green-200">
+            ✅ Xabaringiz muvaffaqiyatli yuborildi! Tez orada siz bilan bog'lanamiz.
+        </p>
+    </form>
+</div>
             </div>
         </div>
     </section>
@@ -519,6 +616,8 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+        // Status Message
+
         // 1. Animatsiyalarni yoqish
         AOS.init();
 
@@ -734,6 +833,22 @@ const statsObserver = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 document.querySelectorAll('.counter').forEach(el => statsObserver.observe(el));
+
+
+function toggleSimpleMenu() {
+        const menu = document.getElementById('mobile-menu-list');
+        const icon = document.getElementById('menu-icon');
+        
+        // Menyuni ochish va yopish
+        menu.classList.toggle('hidden');
+        
+        // Ikonani almashtirish (Bars <-> X belgisi)
+        if (menu.classList.contains('hidden')) {
+            icon.classList.replace('fa-times', 'fa-bars');
+        } else {
+            icon.classList.replace('fa-bars', 'fa-times');
+        }
+    }
     </script>
 </body>
 
